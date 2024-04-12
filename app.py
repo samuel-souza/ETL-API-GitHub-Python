@@ -1,12 +1,9 @@
 import getpass
 from script import Extract, Transform, Load
 
-# Meta, Apple, Netflix e Google
-#  'Netflix', 'google'
-
 companies = ['facebook', 'apple', 'Netflix', 'google']
 token = getpass.getpass('Token: ')
-dicionario = {
+params = {
     'token': token,
     'username': 'samuel-souza',
     'name_repo': 'linguagens-utilizadas',
@@ -17,6 +14,6 @@ for company in companies:
     lista = Extract(company, token).extract_data()
     Transform(lista).to_csv()
 
-Load(dicionario, private = True).load_data()
+Load(params, private = True).load_data()
 
 
