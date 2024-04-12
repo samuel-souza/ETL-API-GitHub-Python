@@ -6,11 +6,10 @@ class Extract:
         self.__owner = owner
         self.__api_url = 'https://api.github.com'
         self.__token = token
-        # self.token = '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'
         self.__headers = {'Authorization': 'Bearer ' + self.__token, 'X-GitHub-Api-Version': '2022-11-28'}
 
     
-    def __qtd_paginas(self) -> int:
+    def __num_pages(self) -> int:
         url = f'{self.__api_url}/users/{self.__owner}/repos'
         response = requests.get(url, headers = self.__headers)
 
@@ -24,7 +23,7 @@ class Extract:
 
     def extract_data(self) -> list:
         list_repo = []
-        num = self.__qtd_paginas() 
+        num = self.__num_pages() 
 
         for n in range(1, num):
             try: 

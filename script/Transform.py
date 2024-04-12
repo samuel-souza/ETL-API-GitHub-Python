@@ -6,14 +6,9 @@ class Transform():
     def __init__(self, list_repo: list) -> None:
         self.__list = list_repo
 
-    # obtendo owner da lista
-
     def __get_owner(self) -> str:
         owner_repo = self.__list[0][0]['full_name'].split('/')[0]
         return owner_repo
-
-
-    # obtendo nomes dos repo
     
     def __get_names(self) -> list:
         name_list = []
@@ -24,8 +19,6 @@ class Transform():
         
         return name_list
     
-    # obtendo linguagens dos repo
-
     def __get_languages(self) -> list:
         languages_list = []
 
