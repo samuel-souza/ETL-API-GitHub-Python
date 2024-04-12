@@ -14,6 +14,6 @@ for company in companies:
     lista = Extract(company, token).extract_data()
     Transform(lista).to_csv()
 
-Load(params, private = True).load_data()
+Load(params, private = False).load_data()
 
 
